@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class game : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    bool gameendd=false;
+    public void EndGame() {
+        if (gameendd==false){
+        Debug.Log("memememe");
+        gameendd=true;
+        Invoke("restart",2);
     }
+    }
+    void restart(){
+SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+
     }
+    // Start is called before the first frame update
+   
 }

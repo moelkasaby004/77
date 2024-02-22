@@ -17,18 +17,21 @@ public class player : MonoBehaviour
    
         rb.AddForce(0,0,force*Time.deltaTime);
         if (Input.GetKey("d")){
-rb.AddForce(stering,0,0);
+rb.AddForce(stering,0,0,ForceMode.VelocityChange);
         }
         if (Input.GetKey("a")){
-            rb.AddForce(-stering,0,0);
+            rb.AddForce(-stering,0,0,ForceMode.VelocityChange);
             
         }
         if (Input.GetKey("space")){
             rb.AddForce(0,16,0);
         }
          if (Input.GetKey("s")){
-            rb.AddForce(0,0,-stering);
+            rb.AddForce(0,0,-stering,ForceMode.VelocityChange);
             
+        }
+        if (rb.position.y<-1f){
+            FindObjectOfType<game>().EndGame();
         }
     }
 }
